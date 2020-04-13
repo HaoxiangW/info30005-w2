@@ -6,10 +6,10 @@ const getAllAuthors = (req, res) => {
 	authorid = authors.id
 	var i;
 	for (i = 0; i < authorid; i++) { 
-		output += '<a href = "/${authorid[i]}">${authorid[i]}</a>' + "<br>";
+		output += '<a href = "/' + authorid[i] + '>${authorid[i]}</a>' + "<br>";
 	}
 	output += '</body>'
-	res.send(authors.id); // return the list of authors
+	res.send(output); // return the list of authors
 };
 
 // Function to handle a request to a particular author
