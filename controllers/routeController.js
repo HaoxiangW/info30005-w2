@@ -11,3 +11,7 @@ else{
 res.send([]);
 }
 };
+
+module.exports = {
+ getAuthorByID,
+};
