@@ -2,7 +2,14 @@
 var authors = require('../models/author');
 // Function to handle a request to get all authors
 const getAllAuthors = (req, res) => {
-res.send(authors); // return the list of authors
+	text = '<H1>Library System</H1><body>Author id list<br>'
+	authorid = authors.id
+	var i;
+	for (i = 0; i < authorid; i++) { 
+		text += '<a href = "/${authorid[i]}">${authorid[i]}</a><br>';
+	}
+	text += '</body>'
+	res.send(authors.id); // return the list of authors
 };
 
 // Function to handle a request to a particular author
@@ -10,7 +17,7 @@ const getAuthorByID = (req, res) => {
 // search for author in the database via ID
 const author = authors.find(author => author.id === req.params.id);
 if (author){
-res.send(author.id); // send back the author details
+res.send(author); // send back the author details
 }
 else{
 // you can decide what to return if author is not found
