@@ -1,0 +1,14 @@
+{
+  "name": "mylibraryapp",
+  "version": "1.0.0",
+  "description": "Library App project for workshop in INFO30005",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jackie Wang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
