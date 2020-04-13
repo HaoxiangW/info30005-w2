@@ -10,7 +10,7 @@ const getAuthorByID = (req, res) => {
 // search for author in the database via ID
 const author = authors.find(author => author.id === req.params.id);
 if (author){
-res.send(author); // send back the author details
+res.send(author.id); // send back the author details
 }
 else{
 // you can decide what to return if author is not found
