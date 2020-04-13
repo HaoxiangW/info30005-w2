@@ -9,7 +9,7 @@ const getAllAuthors = (req, res) => {
 		output += '<a href = "/${authorid[i]}">${authorid[i]}</a>' + "<br>";
 	}
 	output += '</body>'
-	res.send(output); // return the list of authors
+	res.send(authors); // return the list of authors
 };
 
 // Function to handle a request to a particular author
