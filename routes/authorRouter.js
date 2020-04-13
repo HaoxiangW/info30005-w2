@@ -3,8 +3,14 @@ const express = require('express');
 const authorRouter = express.Router();
 // require the author controller
 const authorController = require('../controllers/authorController.js');
+const routeController = require('../controllers/routeController.js');
+
 // handle the GET request on root of author-management path,
 // i.e. get all authors
 authorRouter.get('/', (req, res) => authorController.getAllAuthors(req, res));
+
+//get author by id
+authorRouter.get('/:id', (req, res) => routeController.getAuthorByID(req, res));
+
 // export the router
 module.exports = authorRouter;
