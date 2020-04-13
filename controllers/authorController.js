@@ -5,7 +5,7 @@ const getAllAuthors = (req, res) => {
 	output = '<H1>Library System</H1><body>Author id list<br>'
 	authorid = authors.id
 	var i;
-	for (i = 0; i < authorid; i++) { 
+	for (i = 0; i < authorid.length; i++) { 
 		output += '<a href = "/' + authorid[i] + '>' + authorid[i] + '</a>' + "<br>";
 	}
 	output += '</body>'
