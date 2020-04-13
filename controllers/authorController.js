@@ -2,13 +2,6 @@
 var authors = require('../models/author');
 // Function to handle a request to get all authors
 const getAllAuthors = (req, res) => {
-	output = '<H1>Library System</H1><body>Author id list<br>'
-	authorid = authors.id
-	var i;
-	for (i = 0; i < authorid.length; i++) { 
-		output += '<a href = "/${authorid[i]}">${authorid[i]}</a>' + "<br>";
-	}
-	output += '</body>'
 	res.send(authors); // return the list of authors
 };
 
