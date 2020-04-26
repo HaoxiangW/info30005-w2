@@ -4,15 +4,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // set up author routes
-const searchRouter = require('./routes/searchRouter');
+const searchRouter = require('./routes/itemSearchRouter');
 
 app.get('/', (req, res) => {
  res.send('<H1>INDEX</H1><a href = "/search">search</a>')
 });
 
-// Handle author-management requests
-// the author routes are added onto the end of '/author-management'
-app.use('/search', searchRouter);
+// Handle search requests
+// the search routes are added onto the end of '/search'
+app.use('/search', itemSearchRouter);
 
 app.listen(PORT, () => {
  console.log('This app is listening on port ${PORT}!')
