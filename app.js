@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 
 // Handle search requests
 // the search routes are added onto the end of '/search'
-app.use('/search', SearchRouter);
+app.use('/search', searchRouter);
 
 app.listen(PORT, () => {
  console.log('This app is listening on port ${PORT}!')
