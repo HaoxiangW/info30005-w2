@@ -3,8 +3,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-// set up author routes
-const searchRouter = require('./routes/itemSearchRouter');
+
 
 app.get('/', (req, res) => {
  res.send('<H1>INDEX</H1><a href = "/search">search</a>')
