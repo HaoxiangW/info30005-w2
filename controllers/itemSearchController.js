@@ -1,31 +1,46 @@
+const mongoose = require("mongoose");
 
+// import author model
+const Item = mongoose.model("item");
+
+    
 // function to handle a request to get all authors
 const getAllItems = async (req, res) => {
     
-  res.send("<Head>HELLOWORLD</head>")
+  try {
+    const all_items = await Item.find();
+    return res.send(all_items);
+  } catch (err) {
+    res.status(400);
+    return res.send("Database query failed");
+  }
 };
-    
-  
   
 // function to modify author by ID
-const updateAuthor = async (req, res) => {
+const updateItem = async (req, res) => {
   res.send("Working on this feature");
 };
 
 // function to add author
-const addAuthor = async (req, res) => {
+const addItem = async (req, res) => {
  res.send("Working on this feature");
 };
 
 // function to get author by id
-const getAuthorByID = (req, res) => {
+const getItemByName = (req, res) => {
+  res.send("Working on this feature");
+};
+
+// function to get author by id
+const getItemByBarcode = (req, res) => {
   res.send("Working on this feature");
 };
 
 // remember to export the functions
 module.exports = {
-  getAllAuthors,
-  getAuthorByID,
-  addAuthor,
-  updateAuthor
+  getAllItems,
+  getItemByName,
+  getItemByBarcode
+  updateItem,
+  addItem
 };

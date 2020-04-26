@@ -11,7 +11,7 @@ searchRouter.get('/', (req, res) => {
 });
 
 //get author by id
-searchRouter.get('/:item', (req, res) => searchController.getitemByName(req, res));
+searchRouter.get('/:item', (req, res) => searchController.getAllItems(req, res));
 
 // export the router
 module.exports = itemSearchRouter;
