@@ -4,16 +4,16 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // set up author routes
-const authorRouter = require('./routes/authorRouter');
+const searchRouter = require('./routes/searchRouter');
 
 app.get('/', (req, res) => {
- res.send('<H1>Library System</H1><a href = "/author-management">author</a>')
+ res.send('<H1>INDEX</H1><a href = "/search">search</a>')
 });
 
 // Handle author-management requests
 // the author routes are added onto the end of '/author-management'
-app.use('/author-management', authorRouter);
+app.use('/search', searchRouter);
 
 app.listen(PORT, () => {
- console.log('The library app is listening on port ${PORT}!')
+ console.log('This app is listening on port ${PORT}!')
 });
