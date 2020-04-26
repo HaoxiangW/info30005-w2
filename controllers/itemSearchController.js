@@ -1,19 +1,8 @@
-const mongoose = require("mongoose");
 
-// import author model
-const Item = mongoose.model("item");
-
-    
 // function to handle a request to get all authors
 const getAllItems = async (req, res) => {
     
-  try {
-    const all_items = await Item.find();
-    return res.send(all_items);
-  } catch (err) {
-    res.status(400);
-    return res.send("Database query failed");
-  }
+  res.send("<Head>HELLOWORLD</head>")
 };
     
   
