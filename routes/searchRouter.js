@@ -7,7 +7,7 @@ const searchController = require('../controllers/searchController.js');
 // handle the GET request on root of author-management path,
 // i.e. get all authors
 searchRouter.get('/', (req, res) => {
-	res.send('<div class="topnav"><a class="active" href="#home">Home</a><a href="#about">About</a><a href="#contact">Contact</a><input type="text" placeholder="Search.."></div>')
+	res.send('<div class="topnav"><input type="text" placeholder="Search.."><button type="submit">Submit</button></div>')
 });
 
 //get author by id
