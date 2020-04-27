@@ -1,46 +1,29 @@
+require("../models/db.js");
 const mongoose = require("mongoose");
 
 // import author model
-const Item = mongoose.model("item");
-
-    
-// function to handle a request to get all authors
-const getAllItems = async (req, res) => {
-    
-  try {
-    const all_items = await Item.find();
-    return res.send(all_items);
-  } catch (err) {
-    res.status(400);
-    return res.send("Database query failed");
-  }
-};
+const Item = mongoose.model('items');
   
-// function to modify author by ID
-const updateItem = async (req, res) => {
-  res.send("Working on this feature");
+// find items that contains the searched term or has the same barcode as the searched barcode
+const findItem = async (req, res) => {
+	var name = req.query.name.toLowerCase();
+	console.log("search for " + name);
+	var query = {Name:name}
+	try {
+		item = await Item.find(query);
+		if(item.length){
+			return res.send("Result Found:<br><a href='/item/" + name + "'>" + name + "</a>");
+		} else {
+			res.status(400);
+			return res.send("No result found <a href='/search'>click here</a> to return to the search page");
+		}
+		
+	} catch (err) {
+		res.status(400);
+		return res.send("Database query failed");
+	}
 };
-
-// function to add author
-const addItem = async (req, res) => {
- res.send("Working on this feature");
-};
-
-// function to get author by id
-const getItemByName = (req, res) => {
-  res.send("Working on this feature");
-};
-
-// function to get author by id
-const getItemByBarcode = (req, res) => {
-  res.send("Working on this feature");
-};
-
 // remember to export the functions
 module.exports = {
-  getAllItems,
-  getItemByName,
-  getItemByBarcode
-  updateItem,
-  addItem
+  findItem
 };
