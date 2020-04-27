@@ -8,7 +8,7 @@ const path = require("path");
 // handle the GET request on root of author-management path,
 // i.e. get all authors
 itemSearchRouter.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, '../', 'view/search.html'));
+	res.sendFile(path.join(__dirname, '../', 'views/search.html'));
 });
 
 //get item
