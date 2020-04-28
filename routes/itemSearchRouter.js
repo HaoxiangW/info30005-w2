@@ -1,7 +1,7 @@
 const express = require('express');
 const itemSearchRouter = express.Router();
 
-// require the author controller
+// require the item search controller
 const searchController = require('../controllers/itemSearchController.js');
 const path = require("path");
 

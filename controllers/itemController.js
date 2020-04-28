@@ -1,11 +1,11 @@
 require("../models/db.js");
 const mongoose = require("mongoose");
 
-// import author model
+// import items model
 const Item = mongoose.model('items');
 
     
-// function to handle a request to get all authors
+// function to handle a request to get all items
 const getAllItems = async (req, res) => {
 	try {
 		const all_items = await Item.find();
@@ -17,15 +17,14 @@ const getAllItems = async (req, res) => {
 };
 
 
-// function to get author by id
+// function to get item by id
 const getItem = async (req, res) => {
-	var name = req.params.name.toString();
-	console.log("open item page for " + name);;
-	var query = {Name:name}
+	var id = req.params.id.toString();
+	console.log("open item page for id:" + id);
 	try {
-		item = await Item.find(query);
+		item = await Item.find(mongoose.Types.ObjectId(id));
 		if(item.length){
-			return res.send(item);
+			return res.send(item[0]);
 		} else {
 			res.status(400);
 			return res.send("Page Not Found");
@@ -37,7 +36,7 @@ const getItem = async (req, res) => {
 	}
 };
 
-// remember to export the functions
+//export the functions
 module.exports = {
   getItem,
   getAllItems
